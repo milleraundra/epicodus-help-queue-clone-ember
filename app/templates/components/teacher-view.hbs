@@ -1,12 +1,21 @@
-<div class="">
-  <h3>{{ticket.student}}</h3>
-  <h4>{{ticket.location}}</h4>
-  <h4>Language: {{ticket.language}}</h4>
-  <h5>{{ticket.problem}}</h5>
-  <h5>Submitted: {{moment-from-now ticket.submitted}}</h5>
-</div>
+{{#if isTeacher}}
+  <div class="">
+    <h3>{{ticket.student}}</h3>
+    <h4>{{ticket.location}}</h4>
+    <h4>Language: {{ticket.language}}</h4>
+    <h5>{{ticket.problem}}</h5>
+    <h5>Submitted: {{moment-from-now ticket.submitted}}</h5>
+  </div>
 
-<button {{action 'teacherCloseTicket' model.ticket}}></button>
-<select {{action 'selectTeacher' }}>
+  <select class="form-control"{{action 'selectTeacher' on='change'}}>
+      <option value="None"></option>
+    {{#each teachers as |teacher|}}
+      <option value={{teacher}}>{{teacher.name}}</option>
+    {{/each}}
+  </select>
+  <br>
+  <button class="btn btn-lg btn-success"{{action 'teacherCloseTicket' ticket}}>Close Ticket</button>
 
-</select>
+{{else}}
+  <button class="btn btn-lg btn-warning"{{action 'isTeacher'}}>Teacher View</button>
+{{/if}}

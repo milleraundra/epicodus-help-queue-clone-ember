@@ -10,9 +10,14 @@ export default Ember.Route.extend({
 
   actions: {
     closeTicket(ticket, params){
-      ticket.set('teacher', params[0]);
+      var helper = params.teacher;
+      console.log(helper);
+      debugger;
+      helper.get('tickets').addObject(ticket);
       ticket.set('closed', new Date());
-      ticket.save();
+      ticket.save().then(function(){
+        helper.save();
+      });
       this.transitionTo('request');
     }
   }
