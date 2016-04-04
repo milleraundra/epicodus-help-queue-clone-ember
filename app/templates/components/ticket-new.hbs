@@ -1,4 +1,4 @@
-<div class="">
+  <div class="">
     <form>
       <div class="form-group">
         <label for="student">Student:</label>
@@ -11,10 +11,21 @@
       </div>
 
       <div class="form-group">
+        <select class="form-control" {{action 'selectLanguage' on='change'}}>
+          <option value="Intro">Intro to Programming</option>
+          <option value="Javascript">Javascript Level II</option>
+          <option value="C#">C#</option>
+          <option value="PHP">PHP</option>
+          <option value="Java">Java</option>
+          <option value="CSS">CSS</option>
+        </select>
+      </div>
+
+      <div class="form-group">
         <label for="problem">Problem:</label>
         {{textarea class="form-control" value=problem id="problem"}}
       </div>
 
-      <button {{action 'newTicket'}}>Submit</button>
+      <button class="btn btn-lg btn-default" {{action 'newTicket'}}>Submit</button>
     </form>
-</div>
+  </div>

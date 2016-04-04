@@ -1,5 +1,6 @@
-{{ticket-new newTicket="newTicket"}}
+{{ticket-new newTicket="newTicket" allTickets = model}}
 
+{{ticket-submitted}}
 <hr>
 <ul>
   {{#each model as |ticket|}}
