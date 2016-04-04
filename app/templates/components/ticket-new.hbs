@@ -1,0 +1,20 @@
+<div class="">
+    <form>
+      <div class="form-group">
+        <label for="student">Student:</label>
+        {{input class="form-control" value=student id="student" required=required}}
+      </div>
+
+      <div class="form-group">
+        <label for="location">Location:</label>
+        {{input class="form-control" value=location id="location"}}
+      </div>
+
+      <div class="form-group">
+        <label for="problem">Problem:</label>
+        {{textarea class="form-control" value=problem id="problem"}}
+      </div>
+
+      <button {{action 'newTicket'}}>Submit</button>
+    </form>
+</div>

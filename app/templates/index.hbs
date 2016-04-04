@@ -1,0 +1,8 @@
+{{ticket-new newTicket="newTicket"}}
+
+<hr>
+<ul>
+  {{#each model as |ticket|}}
+    {{ticket-tile ticket=ticket}}
+  {{/each}}
+</ul>
