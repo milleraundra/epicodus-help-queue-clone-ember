@@ -1,3 +1,14 @@
-<div class="">
-  <h3>Success!</h3>
+{{#if model.ticket.closed}}
+<h1>Ticket closed at {{moment-format model.ticket.closed}}</h1>
+
+{{else}}
+<div class="row">
+  <div class="col-md-6">
+    {{student-view ticket=model.ticket teachers=model.teachers studentCloseTicket="closeTicket"}}
+  </div>
+  <div class="col-md-6">
+    {{teacher-view ticket=model.ticket teachers=model.teachers}}
+  </div>
 </div>
+
+{{/if}}

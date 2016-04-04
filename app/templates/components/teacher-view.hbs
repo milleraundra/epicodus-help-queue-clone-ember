@@ -1,0 +1,12 @@
+<div class="">
+  <h3>{{ticket.student}}</h3>
+  <h4>{{ticket.location}}</h4>
+  <h4>Language: {{ticket.language}}</h4>
+  <h5>{{ticket.problem}}</h5>
+  <h5>Submitted: {{moment-from-now ticket.submitted}}</h5>
+</div>
+
+<button {{action 'teacherCloseTicket' model.ticket}}></button>
+<select {{action 'selectTeacher' }}>
+
+</select>

@@ -1,0 +1,6 @@
+{{#if isStudent}}
+<h2>{{ticket.student}}'s request filed {{moment-from-now ticket.submitted}}</h2> <br>
+<button class="btn btn-lg btn-success" {{action 'studentCloseTicket' ticket}}>Nevermind, we got it!</button>
+{{else}}
+<button type="button" class="btn btn-lg btn-primary" {{action 'isStudent'}}>Student View</button>
+{{/if}}
